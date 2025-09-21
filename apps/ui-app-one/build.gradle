@@ -1,0 +1,5 @@
+task buildApp(type: Exec) {
+    workingDir "$projectDir"
+    commandLine 'npm', 'install'
+    commandLine 'npm', 'run', 'build'
+}

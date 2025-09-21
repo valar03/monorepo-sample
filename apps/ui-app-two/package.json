@@ -1,0 +1,17 @@
+{
+  "name": "ui-app-three",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc && echo 'Building UI App Three...'",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "eslint": "^8.0.0",
+    "jest": "^29.6.0"
+  }
+}

@@ -1,0 +1,13 @@
+name: CI/CD Develop
+
+on:
+  push:
+    branches: [ "develop" ]
+
+jobs:
+  dev-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: ./gradlew build
+      - run: echo "Deploying to Dev Environment..."

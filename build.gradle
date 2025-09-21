@@ -1,0 +1,17 @@
+plugins {
+    id 'base'
+}
+
+subprojects {
+    apply plugin: 'base'
+    group = 'com.demo'
+    version = '1.0.0'
+
+    task buildApp(type: Exec) {
+        workingDir "$projectDir"
+        if (file("package.json").exists()) {
+            commandLine 'npm', 'install'
+            commandLine 'npm', 'run', 'build'
+        }
+    }
+}

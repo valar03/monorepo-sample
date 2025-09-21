@@ -1,0 +1,7 @@
+rootProject.name = 'monorepo-demo'
+
+include 'apps:ui-app-one'
+include 'apps:ui-app-two'
+include 'apps:ui-app-three'
+include 'libs:shared-utils'
+include 'libs:shared-components'

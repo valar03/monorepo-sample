@@ -1,0 +1,37 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Root Deps
+        run: npm install --workspaces
+
+      - name: Build All Apps
+        run: ./gradlew build
+
+      - name: Run Tests
+        run: npm test --workspaces
+
+      - name: SonarQube Scan
+        run: echo "Running SonarQube Scan..."
+
+      - name: Checkmarx Scan
+        run: echo "Running Checkmarx Scan..."
+
+      - name: BlackDuck Scan
+        run: echo "Running BlackDuck Scan..."
+
+      - name: Deploy Preview
+        run: echo "Deploying to Preview Env..."
